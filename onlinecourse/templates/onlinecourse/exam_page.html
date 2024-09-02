@@ -1,0 +1,20 @@
+{% block content %}
+    {% if user.is_authenticated %}
+        <h2>Exam for {{ course.name }}</h2>
+        <form action="{% url 'onlinecourse:submit_exam' course.id %}" method="post">
+            {% csrf_token %}
+            {% for question in questions %}
+                <div>
+                    <h5>{{ question.content }}</h5>
+                    {% for choice in question.choice_set.all %}
+                        <input type="radio" name="question_{{ question.id }}" value="{{ choice.id }}">
+                        {{ choice.content }}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+            <button type="submit">Submit Exam</button>
+        </form>
+    {% else %}
+        <p>Please log in to take the exam.</p>
+    {% endif %}
+{% endblock %}
