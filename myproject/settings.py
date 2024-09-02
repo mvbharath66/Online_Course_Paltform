@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Online_Course',
-        'USER': 'root',
-        'PASSWORD': 'Bharath@6903',
+        'NAME': 'use_your_database_name',
+        'USER': 'your_user_name',
+        'PASSWORD': 'your_password',
         'HOST': 'localhost',  
         'PORT': '3306',       
     }
