@@ -7,4 +7,4 @@ typing-extensions;
 aiohttp;
 click;
 wheel;
-multidict
+multidict;
